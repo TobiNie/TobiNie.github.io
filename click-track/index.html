@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        -->
+            <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <!script src="http://cwilso.github.io/AudioContext-MonkeyPatch/AudioContextMonkeyPatch.js"><!/script>
+        <title>Click Track</title>
+    </head>
+    <body>
+        <nav class="control" >
+			<svg class="play" width=100 height="66">
+				  <path id="playPath" d="m41.3,48l0,-30l25.9,15z" fill="#619E73"/>
+			</svg>
+			<svg id="loop" width="75" height="66" viewBox="-20 -17 75 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M0 5V25V30H5H11V25H5V5H28V25H23.5V21.4378L13 27.5L23.5 33.5622V30H28H33V25V5V0H28H5H0V5Z" fill="black"/>
+			</svg>
+			<svg id="delete" width="75" height="66" viewBox="-20 -17 75 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<rect x="3" y="8" width="24" height="25" rx="2" fill="white" stroke="black" stroke-width="2"/>
+				<rect x="20" y="15" width="2" height="12" fill="black"/>
+				<rect x="14" y="15" width="2" height="12" fill="#C4C4C4"/>
+				<rect x="8" y="15" width="2" height="12" fill="black"/>
+				<rect x="14" y="15" width="2" height="12" fill="black"/>
+				<rect x="5" y="1" width="20" height="6" rx="1" fill="white" stroke="black" stroke-width="2"/>
+				<rect y="6" width="30" height="4" fill="black"/>
+				<rect x="2" y="4" width="26" height="2" fill="black"/>
+				</svg>
+					
+			<div>
+            <form onInput="tempo = event.target.value; document.getElementById('showTempo').innerText=tempo;">
+                <input class="speed" name="speed" id="speed" type="range" min="10.0" value="100" max="200.0" orient="vertical">
+                <output id="showTempo" for="speed">100</output>
+            </form>
+			</div> 
+			<form>
+				<label for="tempo">|     Tempo:
+					<input type="text" id="tempo" name="tempo" size=3 value="120">
+				</label>
+			</form> 
+        </nav>
+        <div class="container">
+                <div class="nav">
+					<svg id="0104" width="75" height="100">
+						<use href="#one">
+					</svg>
+					<svg id="0204" width="75" height="100">
+						<use href="#two">
+					</svg>
+					<svg id="0304" width="75" height="100">
+						<use href="#three">
+					</svg>
+					<svg id="0404" width="75" height="100">
+						<use href="#four">
+					</svg>
+					<svg id="0108" width="75" height="75" viewBox="0 0 75 100">
+						<use href="#one">
+					</svg>
+					<svg id="0208" width="75" height="75" viewBox="0 0 75 100">
+						<use href="#two">
+					</svg>
+					<svg id="0308" height="75" viewBox="0 0 75 100" >
+						<use href="#three">
+					</svg>
+					<svg id="0408" height="75" viewBox="0 0 75 100" >
+						<use href="#four">
+					</svg>
+					<svg id="0116" height="50" viewBox="0 0 75 100" >
+						<use href="#one">
+				 	</svg>
+					<svg id="0216" height="50" viewBox="0 0 75 100" >
+						<use href="#two">
+					</svg>
+					<svg id="0316" height="50" viewBox="0 0 75 100" >
+						<use href="#three">
+					</svg>
+					<svg id="0416" height="50" viewBox="0 0 75 100" >
+						<use href="#four">
+					</svg>
+   
+                </div>
+            <div class="background">
+			<div id="defaultNode" class="defaultNodes"></div>
+			<div class="defaultNodes"></div>
+			<div class="defaultNodes"></div>
+			<div class="defaultNodes"></div>
+			<div class="defaultNodes"></div>
+			<div class="defaultNodes"></div>
+			<div class="defaultNodes"></div>
+			<div class="defaultNodes"></div>
+			<div class="defaultNodes"></div>
+			<div class="defaultNodes"></div>
+			<div class="defaultNodes"></div>
+			<div class="defaultNodes"></div>
+	
+			
+			</div>
+        </div>
+
+        <!--<script type="text/javascript" src="cordova.js"></script>-->
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/graphics.js"></script>
+
+		
+			<svg display="none" xmlns="http://www.w3.org/2000/svg">
+				<g id="one">
+					<path d="m17.5,50c0,-11.04972 8.95028,-20 20,-20c11.04972,0 20,8.95028 20,20c0,11.04972 -8.95028,20 -20,20c-11.04972,0 -20,-8.95028 -20,-20z" fill="#000" stroke="#000"/>					
+				</g>
+				<g id="two">
+					<path d="m32.5,30l10,0l0,40l-10,0l0,-40z" fill="#E68022" stroke="#E68022"/>
+				</g>
+				<g id="twoFirst">
+					<path d="m32.5,30l10,0l0,20l-10,0l0,-20z" fill="#E68022" />
+				</g>
+				<g id="three">
+					<path d="m37.5,25l-29.4,50l58.8,0z" fill="#b81414" stroke="#b81414"/>
+				</g>
+				<g id="threeFirst">
+					<path d="m37.5,25l-14.7,25l14.7,8.3l14.7,-8.3l-14.7,-25z" fill="#b81414" />
+				</g>
+				<g id="four">
+						<path d="m17.5,30l40,0l0,40l-40,0l0,-40z" transform="rotate(45 37.5 50)" fill="#1424b8" stroke="#1424b8"/>
+				</g>
+				<g id="fourFirst">
+					<path d="m17.5,30l20,0l0,20l-20,0l0,-20z" transform="rotate(45 37.5 50)" fill="#1424b8" />
+			</g>
+			</svg>
+    </body>
+</html>

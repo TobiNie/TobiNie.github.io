@@ -1,0 +1,158 @@
+
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    user-select: none;
+    
+  }
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:rgb(255, 255, 255);
+    /*background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);*/
+    font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
+    font-size:20px;
+    height:100vh;
+    margin:0px;
+    padding:0px;
+    /* Padding to avoid the "unsafe" areas behind notches in the screen */
+    padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-right, 0px);
+    width:100%;
+}
+
+.control {
+    background-color: #fff;
+	box-shadow: 0px 10px 10px #aaa;
+    margin:0px;
+    padding:0px;
+    height: 66px;
+    display: flex;
+    align-items: center;
+	
+}
+
+
+
+.container {
+    display: flex;	
+    
+}
+
+.nav {
+    background-color: #fff;
+	box-shadow: 3px 10px 10px 0px #aaa;
+	width: 108px;
+    min-width: 108px;
+	
+	display: grid;
+	align-items: center;
+	
+
+	
+    
+    height: calc(100vh - 66px);
+	overflow-y: scroll;
+	overflow-x: scroll;
+
+}
+
+.nav svg{
+	width: 75px;
+	margin: 0px auto;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+/*.nav::-webkit-scrollbar {
+  display: none;
+}
+*/
+/* Hide scrollbar for IE, Edge and Firefox */
+/*.nav {
+  -ms-overflow-style: none;  // IE and Edge 
+  scrollbar-width: none;  // Firefox 
+}*/
+
+.background {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;	
+	align-content: start;
+	justify-content: space-evenly;
+    height: calc(100vh - 66px);
+	width: calc(100vw - 108px);
+	overflow-y: scroll;
+  user-select: none;
+  touch-action: none;
+
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+/*.background::-webkit-scrollbar {
+  display: none;
+}
+*/
+/* Hide scrollbar for IE, Edge and Firefox */
+/*.background {
+  -ms-overflow-style: none;  // IE and Edge 
+  scrollbar-width: none;  // Firefox 
+}
+*/
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: none; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #AAA; 
+  border-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #777; 
+}
+
+.bars {
+	filter: drop-shadow(5px 5px 5px #444444);
+  stroke-width: 4;
+  user-select: none;
+  
+
+
+}
+
+.defaultNodes {
+	width: 100px;
+	height: 100px;
+  
+}
+
+
+output:after {
+	content: "%";
+}
+
+li {
+    
+    list-style: none;
+}
+
+
+
+
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+
+}
+
+
+
+
